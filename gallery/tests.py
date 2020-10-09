@@ -3,11 +3,11 @@ from .models import Image
 
 class TestImage(TestCase):
     def setUp(self):
-        self.image_pic = Image(id=1, name='image', description='This is photo gallery test')
+        self.image_pic = Image(id=1, title='image', description='This is photo gallery test')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.image_pic, Image))    
 
     def test_save_image(self):
-        self.image_test.save_image()
+        self.image_pic.save_image()
         
