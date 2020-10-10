@@ -1,9 +1,4 @@
-.card-img{
-    border-radius: 5px;
-    grid-gap: 15px;
-}
-img{
-    width: 500px;
-    padding: 5px;
+.img-fluid{
     height: 300px;
+    width: 100%;
 }
