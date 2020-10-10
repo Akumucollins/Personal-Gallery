@@ -10,4 +10,13 @@ class TestImage(TestCase):
 
     def test_save_image(self):
         self.image_pic.save_image()
+        img = Image.objects.all()
+        self.assertTrue(len(img) > 0)
         
+    def test_get_image_by_id(self):
+        found_image = self.image_pic.get_image_by_id(self.image_pic.id)
+        images = Image.objects.filter(id=self.image_pic.id)
+        self.assertFalse(found_image, images)    
+
+    def tearDown(self):
+        Image.objects.all().delete()
