@@ -1,5 +1,3 @@
-{% load static %}
-{% include "head.html" %}
 <div class="separator">
     <h3>Album Gallery</h3>
 </div>
@@ -36,11 +34,11 @@
                             <strong><b class="yellow-text">Category:</b></strong> 
                             {{img.category}}
                         </h5>
-                        <a href="/location/{{img.location}}" class="btn btn-sm btn-outline-primary">{{img.location}}</a>
+                        <a href="/location_img/{{img.location}}" class="btn btn-sm btn-outline-primary">{{img.location}}</a>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <span class="mr-4">Spread the word!</span>
+                    <button type="button" name="button" class="btn btn-primary btn-sm mr-4" value="{{img.image.url}}" onclick="copylink(this.value)">Copy Image Link</button>
                     <!--Facebook-->
                     <a type="button" class="btn-floating btn-sm btn-fb"><i class="fab fa-facebook-f black-text"></i></a>
                     <!--Twitter-->
@@ -49,11 +47,10 @@
                     <a type="button" class="btn-floating btn-sm btn-gplus"><i class="fab fa-google-plus-g red-text"></i></a>
                     <!--Linkedin-->
                     <a type="button" class="btn-floating btn-sm btn-ins"><i class="fab fa-linkedin-in green-text"></i></a>
-                    <button type="button" class="btn btn-outline-primary btn-sm ml-4" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm ml-4" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
-{% include "scripts.html" %}
