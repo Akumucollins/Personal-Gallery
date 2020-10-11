@@ -1,3 +1,8 @@
+{% load static %}
+{% include "head.html" %}
+<div class="separator">
+    <h3>Album Gallery</h3>
+</div>
 <div class="card-columns" id="view">
     {% for img in images %}
     <a>
@@ -51,3 +56,4 @@
     </div>
     {% endfor %}
 </div>
+{% include "scripts.html" %}

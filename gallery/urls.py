@@ -8,7 +8,6 @@ app_name = 'gallery'
 urlpatterns=[
   url(r'^$', views.home, name='home'),
   url(r'^location/(?P<location>\w+)/', views.location_img, name='location'),
-] + static(
-            settings.MEDIA_URL, 
-            document_root = settings.MEDIA_ROOT
-    )
+]
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
