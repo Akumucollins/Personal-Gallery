@@ -34,13 +34,15 @@ class Category(models.Model):
         self.delete()        
 
 class Image(models.Model):
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images/',default='SOMETHING STRONG')
     title = models.CharField(max_length=200)
     description = models.TextField()
     author = models.CharField(max_length=30,null=False,blank=False)
     timestamp = models.DateTimeField(auto_now_add=True,auto_now=False)
-    update = models.DateTimeField(auto_now_add=False,auto_now=True) 
+    update = models.DateTimeField(auto_now_add=False,auto_now=True)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE) 
     location = models.ForeignKey(Location,on_delete=models.CASCADE,default=1)  
+    
 
     def __str__(self):
         return self.title
@@ -67,4 +69,13 @@ class Image(models.Model):
     def filter_by_location(cls, location):
         location_img = Image.objects.filter(name_location=location).all()
         return location_img
-  
+    
+    @classmethod
+    def view_location(cls,name):
+        location = cls.objects.filter(location=name)
+        return location
+
+    @classmethod
+    def view_category(cls,cat):
+        categories = cls.objects.filter(categories=cat)
+        return categories

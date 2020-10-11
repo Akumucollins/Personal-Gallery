@@ -4,8 +4,12 @@ from .models import Image,Location,Category
 class TestImage(TestCase):
     def setUp(self):
         self.image_pic = Image(id=1, title='image', description='This is photo gallery test')
+
         self.location = Location(name='Nairobi')
         self.location.save_location()
+
+        self.category = Category(name='drinks')
+        self.category.save_category()
 
     def test_instance(self):
         self.assertTrue(isinstance(self.image_pic, Image))    
@@ -30,6 +34,16 @@ class TestImage(TestCase):
         self.image_pic.update_image(self.image_pic.id, 'images/photo1.jpg')
         updated_image = Image.objects.filter(image='images/photo2.jpg')
         self.assertFalse(len(updated_image) > 0)
+
+    def test_view_location(self):
+        self.image_pic.save()
+        location = Image.view_location(self.location)
+        self.assertTrue(len(location) > 0)
+
+    def test_view_category(self):
+        self.image_pic.save()
+        categories = Image.view_category(self.category)
+        self.assertTrue(len(categories) > 0)  
 
     def tearDown(self):
         Image.objects.all().delete()
