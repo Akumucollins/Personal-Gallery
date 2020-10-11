@@ -1,9 +1,11 @@
 from django.test import TestCase
-from .models import Image
+from .models import Image,Location,Category
 
 class TestImage(TestCase):
     def setUp(self):
         self.image_pic = Image(id=1, title='image', description='This is photo gallery test')
+        self.location = Location(name='Nairobi')
+        self.location.save_location()
 
     def test_instance(self):
         self.assertTrue(isinstance(self.image_pic, Image))    
@@ -31,21 +33,48 @@ class TestImage(TestCase):
 
     def tearDown(self):
         Image.objects.all().delete()
+        Location.objects.all().delete()
+        Category.objects.all().delete()
 
 class TestLocation(TestCase):
     def setUp(self):
-        self.location_test = Location(name=self.location_test)
+        self.location = Location(name='Nairobi')
         self.location.save_location()
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.location_test, Location))
+        self.location.save()
+        self.assertTrue(isinstance(self.location, Location))
 
     def test_save_location(self):
-        self.location_test.save_location()
-        location = Location.get_location()
-        self.assertTrue(len(location) > 0)
+        self.location.save_location()
+        location_test = Location.get_location()
+        self.assertTrue(len(location_test) > 0)
 
     def test_get_location(self):
-        self.location_test.save_location()
-        location = Location.get_location()
-        self.assertTrue(len(location) > 1)
+        self.location.save_location()
+        location_test = Location.get_location()
+        self.assertFalse(len(location_test) > 1)
+
+    def test_upt_location(self):
+        new_location = 'Delhi'
+        self.location.upt_location(self.location.id, new_location)
+        location_uptd = Location.objects.filter(name='Dar es Salaam')
+        self.assertTrue(len(location_uptd) > 0)
+
+    def test_del_location(self):
+        self.location.del_location()
+        location_test = Location.objects.all()
+        self.assertTrue(len(location_test) == 0)    
+
+class CategoryTestClass(TestCase):
+    def setUp(self):
+        self.category = Category(name='food')
+        self.category.save_category()
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.category, Category))
+
+    def test_save_category(self):
+        self.category.save_category()
+        cat = Category.objects.all()
+        self.assertTrue(len(cat) > 0)        

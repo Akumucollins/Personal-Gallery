@@ -21,12 +21,10 @@
                 <a class="nav-link dropdown-toggle white-text" id="navbarDropdownMenuLink"  data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Location
                 </a>
-                <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item text-warning" href="#">Nairobi</a>
-                    <a class="dropdown-item text-warning" href="#">New York</a>
-                    <a class="dropdown-item text-warning" href="#">Lisbon</a>
-                    <a class="dropdown-item text-warning" href="#">Dar es Salama</a>
-                    <a class="dropdown-item text-warning" href="#">Delhi</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    {% for location in locations %}
+                    <a class="dropdown-item" href="/?location={{location.id}}">{{location.name}}</a>
+                    {%endfor%}
                 </div>
             </li>
         </ul>
