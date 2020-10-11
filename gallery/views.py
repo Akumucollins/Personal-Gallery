@@ -1,9 +1,8 @@
 from django.shortcuts import render
-from .models import Image
+from .models import Image,Location
 
 def home(request):
-     context = {}
      images = Image.objects.all()
-     context['images'] = images
+     locations = Location.get_location()
 
-     return render(request, "index.html", context)
+     return render(request, "index.html",{'images':images,'locations':locations})
