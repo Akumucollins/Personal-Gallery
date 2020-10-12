@@ -11,7 +11,7 @@
         <div class="modal-dialog modal-dialog-centered modal-md" role="document">
             <div class="modal-content modal-card">
                 <div class="modal-header">
-                    <h5 class="modal-title text-center" id="img-header">{{img.title}}</h5>
+                    <h5 class="modal-title yellow-center" id="img-header">{{img.title}}</h5>
                 </div>
                 <div class="modal-body">
                     <img src="{{img.image.url}}" alt="{{image.title}}" class="img-fluid">
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <span class="mr-4">Spread the word!</span>
+                    <button type="button" name="button" class="btn btn-primary btn-sm mr-4" value="{{img.image.url}}" onclick="copylink(this.value)">Copy Image Link</button>
                         <!--Facebook-->
                     <a type="button" class="btn-floating btn-sm btn-fb"><i class="fab fa-facebook-f black-text"></i></a>
                     <!--Twitter-->
