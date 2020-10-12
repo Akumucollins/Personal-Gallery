@@ -9,6 +9,6 @@ urlpatterns=[
   url(r'^$', views.home, name='home'),
   url(r'^search/', views.search_results, name='search'),
 ] + static(
-            settings.MEDIA_URL, 
-            document_root = settings.MEDIA_ROOT
-    )
+  settings.MEDIA_URL, 
+  document_root = settings.MEDIA_ROOT
+)
