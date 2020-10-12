@@ -7,8 +7,8 @@
 ---
 
 ## Author
-> By ** [Akumu Collins](https://github.com/Akumucollins)
- ** ;
+> By [Akumu Collins](https://github.com/Akumucollins)
+
 ***
 
 ## Description
