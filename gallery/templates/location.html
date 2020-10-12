@@ -6,26 +6,38 @@
             <img src="{{img.image.url}}" alt="{{img.name}}" class="img-fluid">
         </div>
     </a>
-    <div class="modal fade" id="modal1{{img.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    <div class="modal" id="modal1{{img.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-            <div class="modal-content modal-card">
+            <div class="modal-content modalcard">
                 <div class="modal-header">
-                    <h4 class="modal-title dark-center" id="img-header">{{img.title}}</h4>
+                    <h4 class="modal-title dark-text" id="img-header">{{img.title}}</h4>
                 </div>
                 <div class="modal-body">
                     <img src="{{img.image.url}}" alt="{{image.title}}" class="img-fluid">
                     <div class="pt-3">
-                        <h5 class="img-description"><strong>Description: </strong>{{img.description}}</h5>
-                        <h5 class="img-timestamp"><strong>Pubished On: </strong>{{img.timestamp}}</h5>
-                        <h5 class="img-author"><strong>Author: </strong>{{img.author}}</h5>
-                        <span class="btn btn-sm btn-outline-success">{{image.category | title}}</span>
-                        <a href="/location_img/{{img.location}}" class="btn btn-sm btn-outline-info">{{img.location}}</a>
+                        <h5 class="img-description">
+                            <strong><b class="yellow-text">Description:</b></strong>
+                            {{img.description}}
+                        </h5>
+                        <h5 class="img-timestamp">
+                            <strong><b class="yellow-text">Pubished On:</b></strong>
+                            {{img.timestamp}}
+                        </h5>
+                        <h5 class="img-author">
+                            <strong><b class="yellow-text">Author:</b></strong>
+                            {{img.author}}
+                        </h5>
+                        <h5 class="imd-category">
+                            <strong><b class="yellow-text">Category:</b></strong> 
+                            {{img.category}}
+                        </h5>
+                        <span class="btn btn-sm btn-outline-yellow">{{img.location}}</span>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" name="button" class="btn btn-primary btn-sm mr-4" value="{{img.image.url}}" onclick="copylink(this.value)">Copy Image Link</button>
-                        <!--Facebook-->
+                    <!--Facebook-->
                     <a type="button" class="btn-floating btn-sm btn-fb"><i class="fab fa-facebook-f black-text"></i></a>
                     <!--Twitter-->
                     <a type="button" class="btn-floating btn-sm btn-tw"><i class="fab fa-twitter blue-text"></i></a>
@@ -33,8 +45,7 @@
                     <a type="button" class="btn-floating btn-sm btn-gplus"><i class="fab fa-google-plus-g red-text"></i></a>
                     <!--Linkedin-->
                     <a type="button" class="btn-floating btn-sm btn-ins"><i class="fab fa-linkedin-in green-text"></i></a>
-                    <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
-                        data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm ml-4" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
