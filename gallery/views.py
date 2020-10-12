@@ -22,8 +22,8 @@ def location_img(request, location):
     return render(request, 'location.html', {'location_img': images})
 
 def search_results(request):
-     if 'imagesearch' in request.GET and request.GET["imagesearch"]:
-        category = request.GET.get("imagesearch")
+     if 'search' in request.GET and request.GET["search"]:
+        category = request.GET.get("search")
         searched_images = Image.search_by_category(category)
         message = f"{category}"
         print(searched_images)
