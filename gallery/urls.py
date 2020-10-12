@@ -7,7 +7,8 @@ app_name = 'gallery'
 
 urlpatterns=[
   url(r'^$', views.home, name='home'),
-  url(r'^location/(?P<location>\w+)/', views.location_img, name='location_img'),
+  # url(r'^location/(?P<location>\w+)/', views.location_img, name='location'),
+  url(r'^search/', views.search_results, name='search'),
 ] + static(
             settings.MEDIA_URL, 
             document_root = settings.MEDIA_ROOT

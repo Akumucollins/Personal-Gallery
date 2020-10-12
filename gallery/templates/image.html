@@ -1,5 +1,5 @@
 <div class="separator">
-    <h3>Album Gallery</h3>
+    <h3 class="capitalize dark-text">Album <b class="yellow-text">Photos</b> </h3>
 </div>
 <div class="card-columns" id="view">
     {% for img in images %}
@@ -13,7 +13,7 @@
         <div class="modal-dialog modal-dialog-centered modal-md" role="document">
             <div class="modal-content modalcard">
                 <div class="modal-header">
-                    <h5 class="modal-title yellow-text" id="img-header">{{img.title}}</h5>
+                    <h4 class="modal-title dark-text" id="img-header">{{img.title}}</h4>
                 </div>
                 <div class="modal-body">
                     <img src="{{img.image.url}}" alt="{{image.title}}" class="img-fluid">
