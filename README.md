@@ -7,7 +7,7 @@
 ---
 
 ## Author
-> By [Akumu Collins](https://github.com/Akumucollins)
+> [Akumu Collins](https://github.com/Akumucollins)
 
 ***
 
