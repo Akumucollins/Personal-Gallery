@@ -34,9 +34,8 @@
 ## Setup/Installation Requirements
 To get the code..
 Cloning the repository:
-  ```bash
  https://github.com/Akumucollins/Personal-Gallery.git
-  ```
+  
 Move to the folder and install requirements
   ```bash
   cd Personal-Gallery
