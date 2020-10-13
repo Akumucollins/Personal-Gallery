@@ -27,7 +27,7 @@
 ---
 
 ## Live Link
-[View Site]( https://collinsgallery.herokuapp.com/)
+[View Site](https://collinsgallery.herokuapp.com/)
 
 ***
 
@@ -56,9 +56,8 @@ Testing the application
   python3 manage.py test
   ```
 Open the application on your browser 
-```bash
-/`127.0.0.1:8000`/
-```
+[127.0.0.1:8000](http://127.0.0.1:8000/)
+
 ---
 
 ## Dependencies
@@ -68,7 +67,7 @@ Open the application on your browser
 >* heroku
 ***
 
-# Technologies Used
+## Technologies Used
 >* Bootstrap.
 >* Python.
 
