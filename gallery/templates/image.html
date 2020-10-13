@@ -4,8 +4,8 @@
 <div class="card-columns" id="view">
     {% for img in images %}
     <a>
-        <div class="card image-fluid img-responsive" data-toggle="modal" data-target="#modal1{{img.id}}">
-            <img src="{{img.image.url}}" alt="{{img.name}}">
+        <div class="card img-responsive" data-toggle="modal" data-target="#modal1{{img.id}}">
+            <img src="{{img.image.url}}" alt="{{img.name}}" class="img-fluid">
         </div>
     </a>
     <div class="modal" id="modal1{{img.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
